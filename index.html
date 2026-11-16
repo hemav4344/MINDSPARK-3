@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDSPARK | Campus Mystery Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2 class="logo">MINDSPARK</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#rounds">Rounds</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <p class="tag">THE CAMPUS MYSTERY CHALLENGE</p>
+
+        <h1>MIND<span>SPARK</span></h1>
+
+        <h2>The Ultimate Battles of Brain and Creativity</h2>
+
+        <p>
+            Three rounds. One mystery.
+            One winning team.
+        </p>
+
+        <a href="#login" class="btn">Get Started</a>
+    </section>
+
+    <section id="about">
+        <h2>About The Event</h2>
+        <p>
+            A mysterious prototype has disappeared from the
+            college laboratory. Participate in three exciting
+            rounds to discover the clues, solve technical
+            challenges and uncover the mystery.
+        </p>
+    </section>
+
+    <section id="rounds">
+        <h2>Our Three Rounds</h2>
+
+        <div class="round-container">
+
+            <div class="round-card">
+                <h3>ROUND 01</h3>
+                <h2>Digital Evidence Hunt</h2>
+                <p>Discover hidden clues and analyse digital evidence.</p>
+                <h3>30 Points</h3>
+            </div>
+
+            <div class="round-card">
+                <h3>ROUND 02</h3>
+                <h2>Cipher Break</h2>
+                <p>Decode messages, solve coding puzzles and debug.</p>
+                <h3>40 Points</h3>
+            </div>
+
+            <div class="round-card">
+                <h3>ROUND 03</h3>
+                <h2>Final Verdict</h2>
+                <p>Investigate the mystery and present your conclusion.</p>
+                <h3>100 Points</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="login">
+        <h2>Ready to Challenge Yourself?</h2>
+        <p>Register and enter the world of MINDSPARK.</p>
+        <button class="btn" onclick="showLogin()">Participant Login</button>
+        <button class="btn" onclick="showRegister()">Register</button>
+    </section>
+
+    <script src="script.js"></script>
+ 
+<!-- PARTICIPANT DASHBOARD -->
+<section id="participantDashboard" class="dashboard" style="display:none;">
+
+    <h1>Welcome to MINDSPARK!</h1>
+
+    <h2 id="participantName">Participant</h2>
+
+    <p>Get ready for the ultimate battles of brain and creativity!</p>
+
+    <h2>Your Rounds</h2>
+
+    
+
+<div class="round-container">
+
+    <div class="round-card">
+        <div class="round-icon">🔍</div>
+        <h3>ROUND 01</h3>
+        <h2>Digital Evidence Hunt</h2>
+        <p>Explore clues, discover evidence and investigate the campus mystery.</p>
+        <p>Maximum Points: 30</p>
+        <button onclick="showRoundInfo(1)">Enter Round 1</button>
+    </div>
+
+    <div class="round-card">
+        <div class="round-icon">🔐</div>
+        <h3>ROUND 02</h3>
+        <h2>Cipher Break</h2>
+        <p>Explore coding challenges, secret messages and logical puzzles.</p>
+        <p>Maximum Points: 40</p>
+        <button onclick="showRoundInfo(2)">Enter Round 2</button>
+    </div>
+
+    <div class="round-card">
+        <div class="round-icon">⚖️</div>
+        <h3>ROUND 03</h3>
+        <h2>Final Verdict</h2>
+        <p>Connect the clues, analyse the evidence and reveal the final mystery.</p>
+        <p>Maximum Points: 100</p>
+        <button onclick="showRoundInfo(3)">Enter Round 3</button>
+    </div>
+
+</div>
+
+
+    <h2>Total Score: <span id="totalScore">0</span> / 80</h2>
+
+    <button onclick="logout()">Logout</button>
+
+    <button type="button" onclick="showLeaderboard()">
+  🏆 View Leaderboard
+</button>
+</section>
+  
+
+<!-- ROUND INFORMATION PAGE -->
+
+<section id="roundInfoPage" class="challenge-page" style="display:none;">
+
+    <h1 id="roundTitle">MINDSPARK ROUND</h1>
+
+    <div class="mystery-box">
+        <h2 id="roundName"></h2>
+
+        <p id="roundDescription"></p>
+
+        <h3 id="roundPoints"></h3>
+    </div>
+
+    <h2>Get Ready for the Challenge!</h2>
+
+    <p>Use your creativity, logical thinking and technical knowledge.</p>
+
+    <button onclick="backToDashboard()">
+        Back to Dashboard
+    </button>
+
+</section>
+
+
+
+
+<!-- MINDSPARK LEADERBOARD -->
+
+<section id="leaderboardPage" class="challenge-page" style="display:none;">
+
+    <h1>🏆 MINDSPARK LEADERBOARD</h1>
+    <p class="challenge-subtitle">The Ultimate Battles of Brain and Creativity</p>
+
+    <div class="winner-card">
+        <div class="winner-icon">👑</div>
+        <h2>CHAMPION</h2>
+        <h1>Alex Johnson</h1>
+        <h3>72 / 80 POINTS</h3>
+        <p>Congratulations on your achievement!</p>
+    </div>
+
+    <h2>TOP PARTICIPANTS</h2>
+
+    <div class="leaderboard-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Participant</th>
+                    <th>Round 1</th>
+                    <th>Round 2</th>
+                    <th>Round 3</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>🥇 1</td>
+                    <td>Alex Johnson</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>72</td>
+                </tr>
+
+                <tr>
+                    <td>🥈 2</td>
+                    <td>Sarah Williams</td>
+                    <td>22</td>
+                    <td>21</td>
+                    <td>24</td>
+                    <td>67</td>
+                </tr>
+
+                <tr>
+                    <td>🥉 3</td>
+                    <td>David Kumar</td>
+                    <td>20</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>65</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Priya Sharma</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>22</td>
+                    <td>61</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Rahul Verma</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>57</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button onclick="backToDashboard()">
+        Back to Dashboard
+    </button>
+
+</section>
+
+</body>
+</html>
+
+
